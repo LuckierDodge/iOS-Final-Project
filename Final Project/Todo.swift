@@ -18,7 +18,6 @@ class Todo: UITableViewController {
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
-    }
 
     // MARK: - Table view data source
 
