@@ -50,13 +50,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             dateFormatter.dateStyle = DateFormatter.Style.medium
             dateFormatter.timeStyle = DateFormatter.Style.none
             
-            
             guard let textField1 =  alert.textFields?.first, let text = textField1.text else {return}
             guard let textField2 = alert.textFields?[1], let date = dateFormatter.date(from: textField2.text ?? "Jan 1, 2019") else {return}
             guard let textField3 = alert.textFields?[2], let status = textField3.text else {return}
             self.save(text: text, status: status, due_date: date)
         }
-        alert.addTextField() { (textField) in textField.placeholder = "Title"}
+        alert.addTextField() { (textField) in
+            textField.placeholder = "Title"
+        }
         alert.addTextField { (textField) in
             self.configureDatePicker()
             textField.inputView = self.datePicker
