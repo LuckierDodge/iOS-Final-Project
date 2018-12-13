@@ -41,9 +41,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     @objc
     func insertNewObject(_ sender: Any) {
-        let alert = UIAlertController(title: "Add a Task", message: "It'll automatically be put in your Todo bin", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add a Task", message: "You can set when it's due and the bin to put it in.", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-        let saveAction = UIAlertAction(title: "Create", style:.default) {
+        let saveAction = UIAlertAction(title: "Create", style: .default) {
             [unowned self] action in
             
             let dateFormatter = DateFormatter()
@@ -156,8 +156,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         } else {return "Undefined"}
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
         let task = fetchedResultsController.object(at: indexPath)
         configureCell(cell, withTask: task)
         return cell
@@ -168,7 +168,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         return true
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: TableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let context = fetchedResultsController.managedObjectContext
             context.delete(fetchedResultsController.object(at: indexPath))
@@ -176,16 +176,16 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             do {
                 try context.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                let saveAlert = UIAlertController(title: "Error", message: "There was a problem saving your tasks", preferredStyle: .alert)
+                let acceptAction = UIAlertAction(title: "OK", style: .default)
+                saveAlert.addAction(acceptAction)
+                present(saveAlert, animated: true)
             }
         }
     }
 
-    func configureCell(_ cell: UITableViewCell, withTask task: Task) {
-        cell.textLabel!.text = task.text
+    func configureCell(_ cell: TableViewCell, withTask task: Task) {
+        cell.cellItem = task
     }
 
     // MARK: - Fetched results controller
@@ -196,17 +196,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
         
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-        
-        // Set the batch size to a suitable number.
         fetchRequest.fetchBatchSize = 20
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "status", ascending: true), NSSortDescriptor(key: "due_date", ascending: true)]
         
-        // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "status", ascending: true)
-        
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        // Edit the section name key path and cache name if appropriate.
-        // nil for section name key path means "no sections".
         let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: "status", cacheName: "Master")
         aFetchedResultsController.delegate = self
         _fetchedResultsController = aFetchedResultsController
@@ -214,10 +206,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         do {
             try _fetchedResultsController!.performFetch()
         } catch {
-             // Replace this implementation with code to handle the error appropriately.
-             // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-             let nserror = error as NSError
-             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            let saveAlert = UIAlertController(title: "Error", message: "There was a problem getting your tasks.", preferredStyle: .alert)
+            let acceptAction = UIAlertAction(title: "OK", style: .default)
+            saveAlert.addAction(acceptAction)
+            present(saveAlert, animated: true)
         }
         
         
@@ -247,9 +239,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             case .delete:
                 tableView.deleteRows(at: [indexPath!], with: .fade)
             case .update:
-                configureCell(tableView.cellForRow(at: indexPath!)!, withTask: anObject as! Task)
+                configureCell(tableView.cellForRow(at: indexPath!)! as! TableViewCell, withTask: anObject as! Task)
             case .move:
-                configureCell(tableView.cellForRow(at: indexPath!)!, withTask: anObject as! Task)
+                configureCell(tableView.cellForRow(at: indexPath!)! as! TableViewCell, withTask: anObject as! Task)
                 tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }

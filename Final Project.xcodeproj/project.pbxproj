@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB04389021C1F9DE007F9611 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB04388F21C1F9DE007F9611 /* TableViewCell.swift */; };
+		FB04389221C1FAC1007F9611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB04389121C1FAC1007F9611 /* Main.storyboard */; };
 		FB3F2F1E21C0842A0052E2E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F2F1D21C0842A0052E2E7 /* AppDelegate.swift */; };
-		FB3F2F2521C0842A0052E2E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3F2F2321C0842A0052E2E7 /* Main.storyboard */; };
 		FB3F2F2721C0842D0052E2E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3F2F2621C0842D0052E2E7 /* Assets.xcassets */; };
 		FB3F2F2A21C0842D0052E2E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3F2F2821C0842D0052E2E7 /* LaunchScreen.storyboard */; };
 		FB3F2F5E21C08A090052E2E7 /* TasksModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB3F2F5C21C08A090052E2E7 /* TasksModel.xcdatamodeld */; };
@@ -17,9 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB04388F21C1F9DE007F9611 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FB04389121C1FAC1007F9611 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FB3F2F1A21C0842A0052E2E7 /* Final Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3F2F1D21C0842A0052E2E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB3F2F2421C0842A0052E2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB3F2F2621C0842D0052E2E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB3F2F2921C0842D0052E2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB3F2F2B21C0842D0052E2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,11 +63,12 @@
 				FB3F2F1D21C0842A0052E2E7 /* AppDelegate.swift */,
 				FB3F2F8221C19A450052E2E7 /* MasterViewController.swift */,
 				FB3F2F8321C19A450052E2E7 /* DetailViewController.swift */,
-				FB3F2F2321C0842A0052E2E7 /* Main.storyboard */,
+				FB04389121C1FAC1007F9611 /* Main.storyboard */,
 				FB3F2F2621C0842D0052E2E7 /* Assets.xcassets */,
 				FB3F2F2821C0842D0052E2E7 /* LaunchScreen.storyboard */,
 				FB3F2F2B21C0842D0052E2E7 /* Info.plist */,
 				FB3F2F5C21C08A090052E2E7 /* TasksModel.xcdatamodeld */,
+				FB04388F21C1F9DE007F9611 /* TableViewCell.swift */,
 			);
 			path = "Final Project";
 			sourceTree = "<group>";
@@ -128,9 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB04389221C1FAC1007F9611 /* Main.storyboard in Resources */,
 				FB3F2F2A21C0842D0052E2E7 /* LaunchScreen.storyboard in Resources */,
 				FB3F2F2721C0842D0052E2E7 /* Assets.xcassets in Resources */,
-				FB3F2F2521C0842A0052E2E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB04389021C1F9DE007F9611 /* TableViewCell.swift in Sources */,
 				FB3F2F1E21C0842A0052E2E7 /* AppDelegate.swift in Sources */,
 				FB3F2F5E21C08A090052E2E7 /* TasksModel.xcdatamodeld in Sources */,
 				FB3F2F8421C19A450052E2E7 /* MasterViewController.swift in Sources */,
@@ -151,14 +155,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FB3F2F2321C0842A0052E2E7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB3F2F2421C0842A0052E2E7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FB3F2F2821C0842D0052E2E7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
