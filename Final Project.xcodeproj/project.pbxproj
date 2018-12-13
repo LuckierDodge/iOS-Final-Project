@@ -11,10 +11,9 @@
 		FB3F2F2521C0842A0052E2E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3F2F2321C0842A0052E2E7 /* Main.storyboard */; };
 		FB3F2F2721C0842D0052E2E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3F2F2621C0842D0052E2E7 /* Assets.xcassets */; };
 		FB3F2F2A21C0842D0052E2E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3F2F2821C0842D0052E2E7 /* LaunchScreen.storyboard */; };
-		FB3F2F5721C089B80052E2E7 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F2F5621C089B80052E2E7 /* Todo.swift */; };
-		FB3F2F5921C089C90052E2E7 /* InProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F2F5821C089C90052E2E7 /* InProgress.swift */; };
-		FB3F2F5B21C089D70052E2E7 /* Done.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F2F5A21C089D70052E2E7 /* Done.swift */; };
 		FB3F2F5E21C08A090052E2E7 /* TasksModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB3F2F5C21C08A090052E2E7 /* TasksModel.xcdatamodeld */; };
+		FB3F2F8421C19A450052E2E7 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F2F8221C19A450052E2E7 /* MasterViewController.swift */; };
+		FB3F2F8521C19A450052E2E7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F2F8321C19A450052E2E7 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +23,9 @@
 		FB3F2F2621C0842D0052E2E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB3F2F2921C0842D0052E2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB3F2F2B21C0842D0052E2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB3F2F5621C089B80052E2E7 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
-		FB3F2F5821C089C90052E2E7 /* InProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgress.swift; sourceTree = "<group>"; };
-		FB3F2F5A21C089D70052E2E7 /* Done.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done.swift; sourceTree = "<group>"; };
 		FB3F2F5D21C08A090052E2E7 /* TasksModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TasksModel.xcdatamodel; sourceTree = "<group>"; };
+		FB3F2F8221C19A450052E2E7 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		FB3F2F8321C19A450052E2E7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				FB3F2F1D21C0842A0052E2E7 /* AppDelegate.swift */,
+				FB3F2F8221C19A450052E2E7 /* MasterViewController.swift */,
+				FB3F2F8321C19A450052E2E7 /* DetailViewController.swift */,
 				FB3F2F2321C0842A0052E2E7 /* Main.storyboard */,
 				FB3F2F2621C0842D0052E2E7 /* Assets.xcassets */,
 				FB3F2F2821C0842D0052E2E7 /* LaunchScreen.storyboard */,
 				FB3F2F2B21C0842D0052E2E7 /* Info.plist */,
-				FB3F2F5621C089B80052E2E7 /* Todo.swift */,
-				FB3F2F5821C089C90052E2E7 /* InProgress.swift */,
-				FB3F2F5A21C089D70052E2E7 /* Done.swift */,
 				FB3F2F5C21C08A090052E2E7 /* TasksModel.xcdatamodeld */,
 			);
 			path = "Final Project";
@@ -144,11 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB3F2F5921C089C90052E2E7 /* InProgress.swift in Sources */,
 				FB3F2F1E21C0842A0052E2E7 /* AppDelegate.swift in Sources */,
-				FB3F2F5721C089B80052E2E7 /* Todo.swift in Sources */,
-				FB3F2F5B21C089D70052E2E7 /* Done.swift in Sources */,
 				FB3F2F5E21C08A090052E2E7 /* TasksModel.xcdatamodeld in Sources */,
+				FB3F2F8421C19A450052E2E7 /* MasterViewController.swift in Sources */,
+				FB3F2F8521C19A450052E2E7 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
